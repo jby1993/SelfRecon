@@ -1,16 +1,194 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Github Page demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="index.js"></script>
-</head>
-<body>
-    <div id="main-content">
 
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HeadNeRF: A Real-time NeRF-Based Parametric Head Model</title>
+    <!-- Bootstrap -->
+    <!-- <link href="./css_files/bulma.min.css" rel="stylesheet">
+    <link href="./css_files/bulma-carousel.min.css" rel="stylesheet">
+    <link href="./css_filesbulma-slider.min.css" rel="stylesheet">
+    <link href="./css_files/fontawesome.all.min.css" rel="stylesheet">
+    <link href="./css_files/academicons.min.css" rel="stylesheet">
+    <link href="./css_files/index.css" rel="stylesheet"> -->
+    <link href="./HeadNeRF_Files/bootstrap-4.4.1.css" rel="stylesheet">
+    <link rel="stylesheet" href="./HeadNeRF_Files/font-awesome.min.css">
+  </head>
+
+<!-- cover -->
+
+<body>
+    <section>
+        <div class="jumbotron text-center mt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>HeadNeRF: A Real-time NeRF-based Parametric Head Model
+                        </h1>
+                        <!-- <h4 style="color:#5a6268;">Arxiv</h4> -->
+                        <!-- <hr> -->
+                        <h4><a href="#" >Yang Hong</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="#" >Bo Peng</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="#" >Haiyao Xiao</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="http://staff.ustc.edu.cn/~lgliu/" target="_blank">Ligang Liu</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="http://staff.ustc.edu.cn/~juyong/" target="_blank">Juyong Zhang</a>
+                            <p></p>
+                            University of Science and Technology of China
+                            <p></p>
+                            <ul class="nav nav-pills nav-justified">
+                                <li>
+                                    <a href="https://arxiv.org/abs/2112.05637">
+                                        <img src="./Images/paper_arxiv.png" height="60px">
+                                            <h4><strong>Paper</strong></h4>
+                                    </a>
+                                </li>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <li>
+                                      <img src="./Images/GitHub.png" height="60px">
+                                          <h4 style="color:rgb(150, 150, 150);"><strong>Code</strong></h4>
+                                </li>
+                            </ul>
+                    </h4></div>
+                </div>
+            </div>
+        </div>
+        <section>
+          <div class="container">
+            <div class="row">
+              <div class="col-12 text-center">
+                <!-- <h3>Abstract</h3> -->
+                  <!-- <hr style="margin-top:0px"> -->
+                  <!-- <h6 style="color:#8899a5"> Neural Body can reconstruct a moving human from a monocular video.</h6> -->
+                  <img src="./Images/teaser.png" width="100%">
+
+                  <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                        <source src="" type="video/mp4">
+                  </video> -->
+                    <!-- <br><br> -->
+                <p class="text-left">In this work, we propose HeadNeRF, a novel NeRF-based parametric head model that integrates the neural radiance field to the parametric representation of the human head. It can render high fidelity head images in real-time, and supports directly controlling the generated images' rendering pose and various semantic attributes. Different from existing related parametric models, we use the neural radiance fields as a novel 3D proxy instead of the traditional 3D textured mesh, which makes that HeadNeRF is able to generate high fidelity images. However, the computationally expensive rendering process of the original NeRF hinders the construction of the parametric NeRF model. To address this issue, we adopt the strategy of integrating 2D neural rendering to the rendering process of NeRF and design novel loss terms. As a result, the rendering speed of HeadNeRF can be significantly accelerated, and the rendering time of one frame is reduced from 5s to 25ms. The well-designed loss terms also improve the rendering accuracy, and the fine-level details of the human head, such as the gaps between teeth, wrinkles, and beards, can be represented and synthesized by HeadNeRF. 
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+    </section>
+
+  <section class="section">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <div id="wrapper"> 
+            <video id="home1" poster="Images/total.png" controls="controls" preload="none"> 
+              <source type="video/mp4" src="videos/total_x264.mp4" /> 
+            </video>
+          <video id="home1" poster="Images/iden.png" controls="controls" preload="none"> 
+              <source type="video/mp4" src="videos/iden_x264.mp4" /> 
+          </video>
+          <video id="home1" poster="Images/expr.png" controls="controls" preload="none"> 
+            <source type="video/mp4" src="videos/expr_x264.mp4" /> 
+          </video>
+          <video id="home1" poster="Images/albe.png" controls="controls" preload="none"> 
+            <source type="video/mp4" src="videos/albe_x264.mp4" /> 
+          </video>
+          <div class="clear"></div> 
+        </div>
+    
+        <div id="wrapper"> 
+          <h5 class="text-center" id="home1">
+            Total
+          </h5>
+    
+          <h5 class="text-center" id="home1">
+            Identity
+          </h5>
+    
+          <h5 class="text-center" id="home1">
+            Expression
+          </h5>
+    
+          <h5 class="text-center" id="home1">
+            Albedo
+          </h5>
+          <div class="clear"></div> 
+        </div>
+        </div>
+      </div>
     </div>
-</body>
+
+  </section>
+
+  <!-- method -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          
+          <hr style="margin-top:0px">
+          <h3>Method</h3>
+          <!-- <div class="row" style="margin-top:5px">
+            <div class="col-12 text-center">
+              <img class="img-fluid" width="100%" src="./Images/pipeline.png" alt="">
+            </div>
+          </div> -->
+          <img src="./Images/pipeline.png" width="100%">
+          <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+            <source src="videos/pipeline-v7_cut.mp4" type="video/mp4">
+          </video> -->
+          <p class="text-left">
+            Overview of HeadNeRF. Given semantic latent codes and camera parameters, the MLP-based implicit function is utilized to predict the density and feature vector of the 3D point sampled from one ray. Then the volume rendering is performed to generate a low-resolution feature map, which is further used to render the final result by our well-designed 2D neural rendering module. The whole process is differentiable, and thus the construction of HeadNeRF can be completed using only 2D images.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <hr >  
+          <h3>Demo Video</h3>
+            
+            <video width="100%" controls="controls", poster="./Images/headnerf.png" preload="">
+              <source src="videos/HeadNeRF_Demo_Cor_x264.mp4" type="video/mp4">
+            </video>
+            <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+              <source src="videos/ZZY_wCap.mp4" type="video/mp4">
+            </video>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="videos/CHR_wCap.mp4" type="video/mp4">
+            </video>
+            <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                <source src="videos/MXY.mp4" type="video/mp4">
+            </video> -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <p></p>
+  <div class="container">
+    <div class="row ">
+        <div class="col-12">
+            <h3>Citation</h3>
+<pre style="background-color: #e9eeef;padding: 1.25em 1.5em">
+<code>@article{yang2021headnerf,
+     author     = {Yang Hong and Bo Peng and Haiyao Xiao and Ligang Liu and Juyong Zhang},
+     title      = {HeadNeRF: A Real-time NeRF-based Parametric Head Model},
+     eprinttype = {arXiv},
+     eprint     = {2112.05637},
+     year       = {2021}
+  }</code>
+</pre>
+            <hr>
+        </div>
+    </div>
+</div>
+
+  </body>
 </html>
