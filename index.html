@@ -24,25 +24,25 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h1>HeadNeRF: A Real-time NeRF-based Parametric Head Model
+                        <h1>SelfRecon: Clothed Body Reconstruction from Monocular Video via Implicit and Explicit Representation
                         </h1>
                         <!-- <h4 style="color:#5a6268;">Arxiv</h4> -->
                         <!-- <hr> -->
-                        <h4><a href="#" >Yang Hong</a>
+                        <h4><a href="#" >Boyi Jiang</a><sup>1,2</sup>,
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#" >Bo Peng</a>
+                            <a href="#" >Yang Hong</a><sup>2</sup>,
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#" >Haiyao Xiao</a>
+                            <a href="http://www.cad.zju.edu.cn/home/bao/" target="_blank">Hujun Bao</a><sup>3</sup>,
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="http://staff.ustc.edu.cn/~lgliu/" target="_blank">Ligang Liu</a>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="http://staff.ustc.edu.cn/~juyong/" target="_blank">Juyong Zhang</a>
+                            <a href="http://staff.ustc.edu.cn/~juyong/" target="_blank">Juyong Zhang</a><sup>2</sup>,
                             <p></p>
-                            University of Science and Technology of China
+                            <sup>1</sup>Image Derivative Inc
+                            <sup>2</sup>University of Science and Technology of China, 
+                            <sup>3</sup>Zhejiang University 
                             <p></p>
                             <ul class="nav nav-pills nav-justified">
                                 <li>
-                                    <a href="https://arxiv.org/abs/2112.05637">
+                                    <a href="#">
                                         <img src="./Images/paper_arxiv.png" height="60px">
                                             <h4><strong>Paper</strong></h4>
                                     </a>
@@ -70,7 +70,7 @@
                         <source src="" type="video/mp4">
                   </video> -->
                     <!-- <br><br> -->
-                <p class="text-left">In this work, we propose HeadNeRF, a novel NeRF-based parametric head model that integrates the neural radiance field to the parametric representation of the human head. It can render high fidelity head images in real-time, and supports directly controlling the generated images' rendering pose and various semantic attributes. Different from existing related parametric models, we use the neural radiance fields as a novel 3D proxy instead of the traditional 3D textured mesh, which makes that HeadNeRF is able to generate high fidelity images. However, the computationally expensive rendering process of the original NeRF hinders the construction of the parametric NeRF model. To address this issue, we adopt the strategy of integrating 2D neural rendering to the rendering process of NeRF and design novel loss terms. As a result, the rendering speed of HeadNeRF can be significantly accelerated, and the rendering time of one frame is reduced from 5s to 25ms. The well-designed loss terms also improve the rendering accuracy, and the fine-level details of the human head, such as the gaps between teeth, wrinkles, and beards, can be represented and synthesized by HeadNeRF. 
+                <p class="text-left">We propose SelfRecon, a novel clothed human body reconstruction method that combines implicit and explicit representations to recover space-time coherent geometries from a monocular self-rotating human video. Explicit methods require a predefined template mesh for a given sequence, while the template is hard to acquire for a specific subject. Meanwhile, the fixed topology limits reconstruction accuracy and clothing types. Implicit methods support arbitrary topology and have better quality due to continuous geometric representation. However, it is difficult to integrate multi-frame information to produce a consistent registration sequence for downstream applications. SelfRecon proposes to combine the advantages of both representations. We utilize differential mask loss of explicit mesh to obtain the coherent overall shape, while the details on the implicit surface are refined with the differentiable neural rendering. Meanwhile, the explicit mesh is updated periodically to adjust its topology changes, and a consistent loss is adopted to match both representations closely. Compared with existing methods, SelfRecon can produce high-fidelity surfaces for arbitrary clothed humans with self-supervised optimization. Extensive experimental results demonstrate our superiority on real captured monocular videos.
                 </p>
               </div>
             </div>
