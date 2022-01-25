@@ -4,7 +4,7 @@
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HeadNeRF: A Real-time NeRF-Based Parametric Head Model</title>
+    <title>SelfRecon: Clothed Body Reconstruction from Monocular Video via Implicit and Explicit Representation</title>
     <!-- Bootstrap -->
     <!-- <link href="./css_files/bulma.min.css" rel="stylesheet">
     <link href="./css_files/bulma-carousel.min.css" rel="stylesheet">
@@ -12,8 +12,8 @@
     <link href="./css_files/fontawesome.all.min.css" rel="stylesheet">
     <link href="./css_files/academicons.min.css" rel="stylesheet">
     <link href="./css_files/index.css" rel="stylesheet"> -->
-    <link href="./HeadNeRF_Files/bootstrap-4.4.1.css" rel="stylesheet">
-    <link rel="stylesheet" href="./HeadNeRF_Files/font-awesome.min.css">
+    <link href="./NeuVideoRec_Files/bootstrap-4.4.1.css" rel="stylesheet">
+    <link rel="stylesheet" href="./NeuVideoRec_Files/font-awesome.min.css">
   </head>
 
 <!-- cover -->
@@ -36,8 +36,8 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <a href="http://staff.ustc.edu.cn/~juyong/" target="_blank">Juyong Zhang</a><sup>2</sup>,
                             <p></p>
-                            <sup>1</sup>Image Derivative Inc
-                            <sup>2</sup>University of Science and Technology of China, 
+                            <sup>1</sup>Image Derivative Inc&nbsp;&nbsp;&nbsp;
+                            <sup>2</sup>University of Science and Technology of China&nbsp;&nbsp;&nbsp; 
                             <sup>3</sup>Zhejiang University 
                             <p></p>
                             <ul class="nav nav-pills nav-justified">
@@ -64,13 +64,26 @@
                 <!-- <h3>Abstract</h3> -->
                   <!-- <hr style="margin-top:0px"> -->
                   <!-- <h6 style="color:#8899a5"> Neural Body can reconstruct a moving human from a monocular video.</h6> -->
-                  <img src="./Images/teaser.png" width="100%">
-
+                  <!-- <img src="./Images/teaser.png" width="100%"> -->
+                  <!-- <div id="wrapper"> -->
+                    <video id="home2" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""> 
+                        <source type="video/mp4" src="videos/CHH_female_clip_crop.mp4" /> 
+                      </video>
+                    <video id="home2" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""> 
+                        <source type="video/mp4" src="videos/HY_male_clip_crop.mp4" /> 
+                    </video>
+                  <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                    <source src="videos/CHH_female_clip_crop.mp4" type="video/mp4">
+                  </video>
+                  <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
+                    <source src="videos/HY_male_clip_crop.mp4" type="video/mp4">
+                  </video> -->
+                  <!-- <div class="clear"></div>  -->
                   <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
                         <source src="" type="video/mp4">
                   </video> -->
                     <!-- <br><br> -->
-                <p class="text-left">We propose SelfRecon, a novel clothed human body reconstruction method that combines implicit and explicit representations to recover space-time coherent geometries from a monocular self-rotating human video. Explicit methods require a predefined template mesh for a given sequence, while the template is hard to acquire for a specific subject. Meanwhile, the fixed topology limits reconstruction accuracy and clothing types. Implicit methods support arbitrary topology and have better quality due to continuous geometric representation. However, it is difficult to integrate multi-frame information to produce a consistent registration sequence for downstream applications. SelfRecon proposes to combine the advantages of both representations. We utilize differential mask loss of explicit mesh to obtain the coherent overall shape, while the details on the implicit surface are refined with the differentiable neural rendering. Meanwhile, the explicit mesh is updated periodically to adjust its topology changes, and a consistent loss is adopted to match both representations closely. Compared with existing methods, SelfRecon can produce high-fidelity surfaces for arbitrary clothed humans with self-supervised optimization. Extensive experimental results demonstrate our superiority on real captured monocular videos.
+                <p class="text-left">We propose SelfRecon, a novel clothed human body reconstruction method that combines implicit and explicit representations to recover space-time coherent geometries from a monocular self-rotating human video. Explicit methods require a predefined template mesh for a given sequence, while the template is hard to acquire for a specific subject. Meanwhile, the fixed topology limits reconstruction accuracy and clothing types. Implicit methods support arbitrary topology and have high quality due to continuous geometric representation. However, it is difficult to integrate multi-frame information to produce a consistent registration sequence for downstream applications. SelfRecon proposes to combine the advantages of both representations. We utilize differential mask loss of explicit mesh to obtain the coherent overall shape, while the details on the implicit surface are refined with the differentiable neural rendering. Meanwhile, the explicit mesh is updated periodically to adjust its topology changes, and a consistent loss is adopted to match both representations closely. Compared with existing methods, SelfRecon can produce high-fidelity surfaces for arbitrary clothed humans with self-supervised optimization. Extensive experimental results demonstrate our effectiveness on real captured monocular videos.
                 </p>
               </div>
             </div>
@@ -78,17 +91,17 @@
         </section>
     </section>
 
-  <section class="section">
+  <!-- <section class="section">
 
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
           <div id="wrapper"> 
             <video id="home1" poster="Images/total.png" controls="controls" preload="none"> 
-              <source type="video/mp4" src="videos/total_x264.mp4" /> 
+              <source type="video/mp4" src="videos/CHH_female_clip_crop.mp4" /> 
             </video>
           <video id="home1" poster="Images/iden.png" controls="controls" preload="none"> 
-              <source type="video/mp4" src="videos/iden_x264.mp4" /> 
+              <source type="video/mp4" src="videos/HY_male_clip_crop.mp4" /> 
           </video>
           <video id="home1" poster="Images/expr.png" controls="controls" preload="none"> 
             <source type="video/mp4" src="videos/expr_x264.mp4" /> 
@@ -121,7 +134,7 @@
       </div>
     </div>
 
-  </section>
+  </section> -->
 
   <!-- method -->
   <section>
@@ -141,7 +154,7 @@
             <source src="videos/pipeline-v7_cut.mp4" type="video/mp4">
           </video> -->
           <p class="text-left">
-            Overview of HeadNeRF. Given semantic latent codes and camera parameters, the MLP-based implicit function is utilized to predict the density and feature vector of the 3D point sampled from one ray. Then the volume rendering is performed to generate a low-resolution feature map, which is further used to render the final result by our well-designed 2D neural rendering module. The whole process is differentiable, and thus the construction of HeadNeRF can be completed using only 2D images.
+            The pipeline of SelfRecon. We simultaneously maintain explicit and implicit geometry representations and use forward deformation fields to transform canonical geometry to the current frame space. For explicit representation, we mainly use differentiable mask loss to recover the overall shape. As for implicit representation, sampled neural rendering loss is used to refine geometry details. Finally, a consistent loss is used to keep both geometric representations matched.
           </p>
         </div>
       </div>
@@ -153,11 +166,14 @@
       <div class="row">
         <div class="col-12 text-center">
           <hr >  
-          <h3>Demo Video</h3>
+          <h3>Results on People-Snapshot</h3>
             
-            <video width="100%" controls="controls", poster="./Images/headnerf.png" preload="">
-              <source src="videos/HeadNeRF_Demo_Cor_x264.mp4" type="video/mp4">
-            </video>
+          <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""> 
+            <source type="video/mp4" src="videos/female-3-casual.mp4" /> 
+          </video>
+          <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted=""> 
+            <source type="video/mp4" src="videos/male-4-casual.mp4" /> 
+          </video>
             <!-- <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
               <source src="videos/ZZY_wCap.mp4" type="video/mp4">
             </video>
@@ -167,6 +183,9 @@
             <video width="100%" playsinline="" autoplay="autoplay" loop="loop" preload="" muted="">
                 <source src="videos/MXY.mp4" type="video/mp4">
             </video> -->
+          <p id='home1' class='text-center'>input video</p>
+          <p id='home1' class='text-center'>rendering</p>
+          <p id='home1' class='text-center'>reconstruction</p>
         </div>
       </div>
     </div>
@@ -177,12 +196,12 @@
         <div class="col-12">
             <h3>Citation</h3>
 <pre style="background-color: #e9eeef;padding: 1.25em 1.5em">
-<code>@article{yang2021headnerf,
-     author     = {Yang Hong and Bo Peng and Haiyao Xiao and Ligang Liu and Juyong Zhang},
-     title      = {HeadNeRF: A Real-time NeRF-based Parametric Head Model},
+<code>@article{?,
+     author     = {Boyi Jiang and Yang Hong and Hujun Bao and Juyong Zhang},
+     title      = {SelfRecon: Clothed Body Reconstruction from Monocular Video via Implicit and Explicit Representation},
      eprinttype = {arXiv},
-     eprint     = {2112.05637},
-     year       = {2021}
+     eprint     = {},
+     year       = {}
   }</code>
 </pre>
             <hr>
