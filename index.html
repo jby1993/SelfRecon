@@ -28,17 +28,17 @@
                         </h1>
                         <!-- <h4 style="color:#5a6268;">Arxiv</h4> -->
                         <!-- <hr> -->
-                        <h4><a href="https://scholar.google.com/citations?user=lTlZV8wAAAAJ&hl=zh-CN" >Boyi Jiang</a><sup>1,2</sup>,
+                        <h4><a href="https://scholar.google.com/citations?user=lTlZV8wAAAAJ&hl=zh-CN" >Boyi Jiang</a><sup>1,2</sup>
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#" >Yang Hong</a><sup>1</sup>,
+                            <a href="#" >Yang Hong</a><sup>1</sup>
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="http://www.cad.zju.edu.cn/home/bao/" target="_blank">Hujun Bao</a><sup>3</sup>,
+                            <a href="http://www.cad.zju.edu.cn/home/bao/" target="_blank">Hujun Bao</a><sup>3</sup>
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <a href="http://staff.ustc.edu.cn/~juyong/" target="_blank">Juyong Zhang</a><sup>1*</sup>
                             <p></p>
-                            <sup>1</sup>University of Science and Technology of China&nbsp;&nbsp;&nbsp; 
+                            <sup>1</sup><a href="http://en.ustc.edu.cn/" target="_blank">University of Science and Technology of China</a>&nbsp;&nbsp;&nbsp; 
                             <sup>2</sup><a href="https://idr.ai/" target="_blank">Image Derivative Inc</a>&nbsp;&nbsp;&nbsp;
-                            <sup>3</sup>Zhejiang University 
+                            <sup>3</sup><a href="https://www.zju.edu.cn/english/" target="_blank">Zhejiang University</a> 
                             <p></p>
                             <ul class="nav nav-pills nav-justified">
                                 <li>
@@ -145,7 +145,7 @@
         <div class="col-12 text-center">
           
           <hr style="margin-top:0px">
-          <h3>Method</h3>
+          <h3>The pipeline of SelfRecon</h3>
           <!-- <div class="row" style="margin-top:5px">
             <div class="col-12 text-center">
               <img class="img-fluid" width="100%" src="./Images/pipeline.png" alt="">
@@ -157,7 +157,7 @@
           </video> -->
         <h5>
           <p class="text-left">
-            The pipeline of SelfRecon. We simultaneously maintain the explicit and implicit geometry representations and use forward deformation fields to transform canonical geometry to the current frame space. For explicit representation, we mainly use differentiable mask loss to recover the overall shape. As for implicit representation, sampled neural rendering loss and predicted normals are used to refine geometry details. Finally, a consistency loss is used to keep both geometric representations matched.
+            We simultaneously maintain the explicit and implicit geometry representations and use forward deformation fields to transform canonical geometry to the current frame space. For explicit representation, we mainly use differentiable mask loss to recover the overall shape. As for implicit representation, sampled neural rendering loss and predicted normals are used to refine geometry details. Finally, a consistency loss is used to keep both geometric representations matched.
           </p>
         </h5>
         </div>
@@ -241,11 +241,10 @@
           <source type="video/mp4" src="videos/Franzi_studio_data.mp4" /> 
       </video>
       <!-- <img src="./Images/cite2.png" width="100%"> -->
-      <p class='text-center'>[2] Sida Peng, et al. Neural body: Implicit neural representations with structured latent codes for novel view synthesis of dynamic humans. In CVPR, 2021. 
-        [3] Weipeng Xu, et al. Monoperfcap: Human performance capture from monocular video. ACM Transactions on Graphics (ToG), 37(2):1–15, 2018.</p>
+      <p class='text-center'>[2] Sida Peng, et al. Neural body: Implicit neural representations with structured latent codes for novel view synthesis of dynamic humans. In CVPR, 2021. <br>[3] Weipeng Xu, et al. Monoperfcap: Human performance capture from monocular video. ACM Transactions on Graphics (ToG), 37(2):1–15, 2018.</p>
       <h5>
         <p class="text-left">
-          The paper focuses on human reconstruction using self-rotating videos, while the algorithm framework can be easily extended to general motion sequences. Although some details are lost, and the tracking accuracy is also damaged, a plausible result can be obtained. We believe that valuable explorations based on our framework can further refine the results of general motions in the future.
+          The paper focuses on clothed body reconstruction using self-rotating videos, and the algorithm framework can still be used to general motion sequences. We can see that a plausible result can be obtained. We believe that valuable explorations based on our framework can further refine the results of general motions in the future.
           </p>
         </h5>
         </div>
